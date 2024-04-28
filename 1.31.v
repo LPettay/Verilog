@@ -24,10 +24,10 @@ module fulladd(S, Cout, A, B, Cin);
     or or1(Cout, C1, C0);
 endmodule
 
-module eightbitadd(S, Cout, A, B, C);
+module eightbitadd(S, Cout, A, B);
     input [7:0] A, B;
-    input [6:0] C;
-    output [7:0] S; 
+    wire [6:0] C;
+    output [7:0]S; 
     output Cout;
 
     // I know.. I should learn to use the generate function in verilog but I doubt I'll be using this much!
@@ -47,7 +47,7 @@ module main;
     reg [6:0] Cin;
     wire [7:0] S; 
     wire Cout;
-    eightbitadd add8(S, Cout, A, B, Cin);
+    eightbitadd add8(S, Cout, A, B);
 
   initial 
     begin
